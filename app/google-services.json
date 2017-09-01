@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "127485467964",
+    "firebase_url": "https://appcivico-13ac2.firebaseio.com",
+    "project_id": "appcivico-13ac2",
+    "storage_bucket": "appcivico-13ac2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127485467964:android:c036f9c7773c4b7c",
+        "android_client_info": {
+          "package_name": "iesb.br.appcivico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127485467964-qa9n5akgrshpofusktnk1q8cu26n8ti8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "iesb.br.appcivico",
+            "certificate_hash": "593a3a722a4eee004a408a0c53e8f94bbc671fa6"
+          }
+        },
+        {
+          "client_id": "127485467964-mbnm26ft1m6dita78s0r1e79rjqrqngc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsROKzldvfEUZu0zlkSTg-BHpQOSJwGkQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127485467964-mbnm26ft1m6dita78s0r1e79rjqrqngc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

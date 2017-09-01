@@ -8,9 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import java.util.ArrayList;
 
-public class ListAdapter extends RecyclerView.Adapter {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListaViewHolder> {
     private Context context;
+    private ArrayList<Contact> model;
+
+    public ListAdapter(Context context, ArrayList<Contact> modelo) {
+        this.context = context;
+        this.model = modelo;
+    }
 
     @Override
     public ListaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -19,11 +26,14 @@ public class ListAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(ListaViewHolder holder, int position) {
+        Contact c = model.get(position);
+        holder.nome.setText(c.getName());
+        holder.email.setText(c.getEmail());
     }
 
     @Override
-    public int getItemCount() { return 0; }
+    public int getItemCount() { return model.size(); }
 
     public class ListaViewHolder extends RecyclerView.ViewHolder {
         public ImageView profileImage;

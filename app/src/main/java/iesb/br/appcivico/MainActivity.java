@@ -1,6 +1,7 @@
 package iesb.br.appcivico;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,11 +10,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
         setContentView(R.layout.activity_main);
 
         Button btnCadastrar = (Button) findViewById(R.id.btnCadastrar);
@@ -31,21 +45,31 @@ public class MainActivity extends AppCompatActivity {
                 EditText inputEmail = (EditText) findViewById(R.id.inputEmail);
                 EditText inputPassword = (EditText) findViewById(R.id.inputPassword);
 
-                if(inputEmail.getText().toString().equals("david@teste.com.br") && inputPassword.getText().toString().equals("12345678")) {
-                    startActivity(new Intent(MainActivity.this, MapActivity.class));
-                } else {
-                    Log.d("myTag1", inputPassword.getText().toString());
-                    Log.d("myTag2", inputEmail.getText().toString());
+                mAuth.signInWithEmailAndPassword(inputEmail.getText().toString(), inputPassword.getText().toString())
+                    .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Log.d("TESTE", "signInWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                            } else {
+                                Log.w("TESTE", "signInWithEmail:failure", task.getException());
+                                Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            }
 
-                    Toast.makeText(MainActivity.this, "Ops", Toast.LENGTH_LONG).show();
-                }
+                        }
 
+                    });
             }
+
+
         });
 
 
 
 
     }
+
+
 
 }
