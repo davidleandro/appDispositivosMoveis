@@ -27,8 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        tools:text="Emails" />
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/inputPassword"
@@ -36,8 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="Password" />
+        android:hint="Senha"
+        android:inputType="textPassword" />
 
     <CheckBox
         android:id="@+id/lembrar"

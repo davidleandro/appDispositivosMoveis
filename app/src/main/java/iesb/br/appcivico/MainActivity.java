@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,9 +54,10 @@ public class MainActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Log.d("TESTE", "signInWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                startActivity(new Intent(MainActivity.this, MapActivity.class));
                             } else {
                                 Log.w("TESTE", "signInWithEmail:failure", task.getException());
-                                Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Verifique os dados e tente novamente.", Toast.LENGTH_SHORT).show();
                             }
 
                         }

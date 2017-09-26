@@ -22,52 +22,52 @@
         app:srcCompat="@drawable/logo_app" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nome" />
+        android:hint="Nome"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="Email" />
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/txtPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="phone"
-        android:text="Telefone" />
+        android:hint="Telefone"
+        android:inputType="phone" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="textPassword|textVisiblePassword"
-        android:text="Senha" />
+        android:hint="Senha"
+        android:inputType="textPassword|textVisiblePassword" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/txtPasswordConfirmation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:inputType="textPassword|textVisiblePassword"
-        android:text="Confirmação da senha" />
+        android:hint="Confirmação da senha"
+        android:inputType="textPassword|textVisiblePassword" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cadastrar" />
