@@ -1,5 +1,6 @@
 package iesb.br.appcivico;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ public class signupActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Log.d("TESTE", "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                startActivity(new Intent(signupActivity.this, MapActivity.class));
                             } else {
                                 Log.w("TESTE", "createUserWithEmail:failure", task.getException());
                                 Toast.makeText(signupActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();

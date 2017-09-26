@@ -55,7 +55,7 @@
         android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Senha"
-        android:inputType="textPassword|textVisiblePassword" />
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/txtPasswordConfirmation"
@@ -64,7 +64,7 @@
         android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="Confirmação da senha"
-        android:inputType="textPassword|textVisiblePassword" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnSignUp"
