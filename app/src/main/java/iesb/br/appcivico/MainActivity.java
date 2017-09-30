@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Log.d("TESTE", "signInWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                startActivity(new Intent(MainActivity.this, MapActivity.class));
+                                startActivity(new Intent(MainActivity.this, ExplanationActivity.class));
                             } else {
                                 Log.w("TESTE", "signInWithEmail:failure", task.getException());
                                 Toast.makeText(MainActivity.this, "Verifique os dados e tente novamente.", Toast.LENGTH_SHORT).show();

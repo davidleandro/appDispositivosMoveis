@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class signupActivity extends AppCompatActivity {
 
@@ -31,7 +32,7 @@ public class signupActivity extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText inputName = (EditText) findViewById(R.id.txtName);
+                /*final*/ EditText inputName = (EditText) findViewById(R.id.txtName);
                 EditText inputEmail = (EditText) findViewById(R.id.txtEmail);
                 EditText inputPhone = (EditText) findViewById(R.id.txtPhone);
                 EditText inputPassword = (EditText) findViewById(R.id.txtPassword);
@@ -44,7 +45,12 @@ public class signupActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Log.d("TESTE", "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                startActivity(new Intent(signupActivity.this, MapActivity.class));
+                                //UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                //    .setDisplayName(inputName.getText().toString())
+                                //    .build();
+                                //user.updateProfile(profileUpdates);
+
+                                startActivity(new Intent(signupActivity.this, ExplanationActivity.class));
                             } else {
                                 Log.w("TESTE", "createUserWithEmail:failure", task.getException());
                                 Toast.makeText(signupActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();

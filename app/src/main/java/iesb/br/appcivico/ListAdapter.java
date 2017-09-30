@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListaViewHolder> {
     private Context context;
-    private ArrayList<Contact> model;
+    private ArrayList<Estabelecimento> model;
 
-    public ListAdapter(Context context, ArrayList<Contact> modelo) {
+    public ListAdapter(Context context, ArrayList<Estabelecimento> modelo) {
         this.context = context;
         this.model = modelo;
     }
@@ -27,26 +27,26 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListaViewHolde
 
     @Override
     public void onBindViewHolder(ListaViewHolder holder, int position) {
-        Contact c = model.get(position);
-        holder.nome.setText(c.getName());
-        holder.email.setText(c.getEmail());
+        Estabelecimento e = model.get(position);
+        holder.nomeCras.setText(e.getNomeCras());
+        holder.endereco.setText(e.getEndereco());
+        holder.cep.setText(e.getCep());
     }
 
     @Override
     public int getItemCount() { return model.size(); }
 
     public class ListaViewHolder extends RecyclerView.ViewHolder {
-        public ImageView profileImage;
-        public TextView nome;
-        public TextView email;
-
+        public TextView nomeCras;
+        public TextView endereco;
+        public TextView cep;
 
         public ListaViewHolder(View v) {
             super(v);
 
-            profileImage = (ImageView) v.findViewById(R.id.imgProfile);
-            nome = (TextView) v.findViewById(R.id.txtNome);
-            email = (TextView) v.findViewById(R.id.txtEmail);
+            nomeCras = (TextView) v.findViewById(R.id.nomeCras);
+            endereco = (TextView) v.findViewById(R.id.endereco);
+            cep = (TextView) v.findViewById(R.id.cep);
         }
     }
 }

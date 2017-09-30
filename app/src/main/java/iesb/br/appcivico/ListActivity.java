@@ -10,26 +10,29 @@ import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
 
-    private ArrayList<Contact> model = new ArrayList<Contact>();
+    private ArrayList<Estabelecimento> model = new ArrayList<Estabelecimento>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        Contact c1 = new Contact();
-        c1.setName("David Leandro");
-        c1.setEmail("david@webredonda.com.br");
+        Estabelecimento c1 = new Estabelecimento();
+        c1.setNomeCras("CRAS SANTOS DUMONT");
+        c1.setEndereco("ADALBERTO BELLINI");
+        c1.setCep("7152440");
         model.add(c1);
 
-        Contact c2 = new Contact();
-        c2.setName("Tom");
-        c2.setEmail("tom@gmail.com");
+        Estabelecimento c2 = new Estabelecimento();
+        c2.setNomeCras("CRAS Centro de Referencia de Assistencia Social");
+        c2.setEndereco("Alberto dos Santos");
+        c2.setCep("7152440");
         model.add(c2);
 
-        Contact c3 = new Contact();
-        c3.setName("Rafael");
-        c3.setEmail("rafael@gmail.com");
+        Estabelecimento c3 = new Estabelecimento();
+        c3.setNomeCras("CENTRO DE REFERENCIA DE ASSISTENCIA SOCIAL");
+        c3.setEndereco("3818 ODIVAL MARGARIDO DOS SANTOS JARDIM ELDORADO 75");
+        c3.setCep("7500000");
         model.add(c3);
 
 
